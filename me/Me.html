@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff; /* Soft pastel blue */
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .card h1 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #4b6e91;
+        }
+        .card p {
+            font-size: 1em;
+            color: #6b7a8f;
+            margin: 10px 0 20px;
+        }
+        .card button {
+            background-color: #91c5ff;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .card button:hover {
+            background-color: #77a9e0;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #eaf4fc;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            width: 400px;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.4s ease;
+        }
+        .modal-content.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .modal-content h1 {
+            color: #527a9e;
+        }
+        .modal-content p {
+            color: #6b7a8f;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 1.5em;
+            color: #4b6e91;
+            cursor: pointer;
+        }
+        .social-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #91c5ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.social-links a:hover {
+    background-color: #77a9e0;
+    transform: scale(1.05); /* Scale effect */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Gowri Shankar Reddy</h1>
+        <p>I was born on 15th of March, 2005. I like to learn new languages and gain new knowledge. You can call me "Shankar"</p>
+        <button onclick="openModal()">Learn More</button>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <button class="close-button" onclick="closeModal()">&times;</button>
+            <h1>Hello, I'm Shankar!</h1>
+            <p>I'm passionate about Electronics. I enjoy watching anime, reading books and I am trying to write my own light novel. I do like making new friends too!</p>
+            <p>Here is my Instagram, feel free to talk to me:</p>
+            <div class="social-links">
+                <a href="https://instagram.com/the._.lost._.soul._.__" target="_blank">Instagram</a>
+                            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('infoModal');
+            const modalContent = document.getElementById('modalContent');
+            modal.style.display = 'flex';
+            setTimeout(() => modalContent.classList.add('show'), 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('infoModal');
+            const modalContent = document.getElementById('modalContent');
+            modalContent.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 400);
+        }
+    </script>
+
+</body>
+</html>
